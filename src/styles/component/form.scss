@@ -1,41 +1,75 @@
 @use '@styles/abstracts/_colors.scss';
 
 .form_controls {
-    width: 350px; // this should be 100% and dependant to the parent's container size
+    width: 400px; // this should be 100% and dependant to the parent's container size
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 10px;
     padding-top: 0.5rem;
 
+    @media screen and (max-width: 500px) {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      
+    }
    
   }
-  .form_label {
+
+
+.form_label {
     font-weight: bolder;
     border-bottom: 2px solid black;
-  }
-  .form_input {
-    padding: 0.5rem;
-    border-radius: 8px;
-    border: dashed 2px #6C4E31;
-    outline: none;
+}
+.form_input {
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: dashed 2px #6C4E31;
+   outline: none;
 
 
-    &:focus {
+  &:focus {
         border-color: colors.$medium-beige;
-    }
+  }
+
+   
 }
 
 
 .login-form {
   width: 500px;
+  height: 500px;
  display: flex;
  flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ background-color: colors.$dirty-white;
+ border:2px dashed colors.$dark-900;
+ border-radius: 16px;
+ padding: 1rem;
+ box-shadow: 6px 6px 2px 4px;
+
+ // if the media screen is literally 500px
+ @media  screen and  (max-width: 500px){
+   max-width: 300px;
+ }
+
+ //overrides the initial property of .form_controls class
+ .form_controls {
+
+  justify-content: space-around;
+  align-items: center;
  
+ 
+}
+
+
 }
 
 .signup-form {
   width: 500px;
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -45,6 +79,11 @@
   border-radius: 16px;
   padding: 1rem;
   box-shadow: 6px 6px 2px 4px;
+
+  // if the media screen is literally 500px
+  @media  screen and  (max-width: 500px){
+    max-width: 300px;
+  }
 
 }
 

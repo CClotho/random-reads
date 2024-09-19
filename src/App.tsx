@@ -17,7 +17,7 @@ function App() {
      <Link to="/"> Go to new</Link>
      </div>
       <SignUpForm/>
-    
+      <LoginForm/>
       <Outlet />
     </>
   )

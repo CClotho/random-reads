@@ -1,0 +1,50 @@
+.form_controls {
+    width: 350px; // this should be 100% and dependant to the parent's container size
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.5rem;
+
+   
+  }
+  .form_label {
+  
+    border-bottom: 2px solid black;
+  }
+  .form_input {
+    padding: 0.5rem;
+    border-radius: 8px;
+    border: dashed 2px #6C4E31;
+    outline: none;
+
+    &:focus {
+        border-color: #FFDBB5;
+    }
+}
+
+.login-form {
+  width: 500px;
+ display: flex;
+ flex-direction: column;
+ 
+}
+.signup-form {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.formBtn {
+  
+
+  width: 100px;
+  padding: 0.5rem;
+}
+
+.Btn {
+  margin-top: 1rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}

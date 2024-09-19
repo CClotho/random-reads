@@ -12,13 +12,12 @@ function App() {
     
     <>
      {/* Not working*/}
+     <div>
      <Link to="/story"> Go to story page</Link>
      <Link to="/"> Go to new</Link>
-     <img src="/images/black-cat.png" alt="cat"></img>
-      <LoginForm/>
+     </div>
       <SignUpForm/>
-      <div> Photo under here</div>
-      <Avatar image_link="images/black-cat.png" alt="text"/>
+    
       <Outlet />
     </>
   )

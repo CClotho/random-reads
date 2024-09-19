@@ -29,7 +29,7 @@ const useImageUpload = function(file?: Blob): ImageUpload {
     }, [selectedFile])
     
     const onSelectedFile = function (e: React.ChangeEvent<HTMLInputElement>): void {
-
+        e.stopPropagation();
        
         if (e.target.files && e.target.files.length > 0) {
             const file = e.target.files[0]; // Get the first selected file

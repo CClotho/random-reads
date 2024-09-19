@@ -8,8 +8,8 @@ const Home = function() {
       
       <>
        {/* <div onClick={() => setToggle(!toggle)}>Browse Stories</div> */}
-        <div> Home</div>
-        <Link to="/story"> Go to story page</Link>
+        <div>       <Link to="/story"> Home</Link> </div>
+ 
         
       </>
     )

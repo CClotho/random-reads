@@ -47,8 +47,9 @@ const SignUpForm = function (): React.JSX.Element {
     return (
         <form className="signup-form " onSubmit={handleSubmit}>
             <Avatar image_link={preview ? preview :'images/black-cat.png'} alt="avatar"/> 
-            <input type="file" onChange={onSelectedFile} className=".file"/>
-            <Input title="Username" name="username" value={formData.username} onChange={handleChange}/>
+            <input type="file" onChange={onSelectedFile} className="file" />
+            <div className="border-top"></div>
+            <Input className="" title="Username" name="username" value={formData.username} onChange={handleChange}/>
             <Input title="Email" name="email" value={formData.email} onChange={handleChange}/>
             <Input title="Password" name="password" value={formData.password} onChange={handleChange}/>
             <Input title="Confirm Password" name="confirm_password" value={formData.confirm_password} onChange={handleChange}/>

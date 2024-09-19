@@ -9,7 +9,7 @@ const Avatar = function({image_link, alt}: AvatarProps): React.JSX.Element { // 
     
     return(
       
-            <img className="avatar profile" src={image_link} alt={alt} />
+            <img className=" profile" src={image_link} alt={alt} />
        
     )
 }

@@ -1,4 +1,4 @@
-import '/src/styles/component/input.scss';
+import '/src/styles/component/form.scss';
 // Type of functions
 interface InputTypes {
     name: string,
@@ -6,6 +6,7 @@ interface InputTypes {
      placeholder?: string,
      type?: string
      value?: string,
+     className?: string
     onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
      
     setState?: React.Dispatch<React.SetStateAction<string>>;
@@ -16,10 +17,10 @@ interface InputTypes {
 
 }
 
-const Input = function({type, title, value, name, onChange, setState, placeholder}: InputTypes): React.JSX.Element {
+const Input = function({className, type, title, value, name, onChange, setState, placeholder}: InputTypes): React.JSX.Element {
 
     return (
-        <div className="form_controls">
+        <div className={`form_controls ${className ? className : ''}`}>
             <label id={name}className="form_label"> {title}</label>
             <input type={type? type : 'text'} className="form_input" value={value}onChange={onChange} name={name}placeholder={placeholder}></input>
         </div>

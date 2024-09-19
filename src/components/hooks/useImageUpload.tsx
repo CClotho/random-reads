@@ -2,16 +2,16 @@ import { useEffect, useState } from "react";
 
 interface ImageUpload {
     selectedFile: Blob | MediaSource | null,
-    preview: Blob | string | undefined ,
+    preview: | string | undefined ,
     //setSelectedFile: React.Dispatch<React.SetStateAction<Blob>>;
-    setPreview: React.Dispatch<React.SetStateAction<string | undefined | Blob>>;
+    setPreview: React.Dispatch<React.SetStateAction<string | undefined>>;
     onSelectedFile: (e: React.ChangeEvent<HTMLInputElement>)=> void;
 }
 
 const useImageUpload = function(file?: Blob): ImageUpload {
     
     const [selectedFile, setSelectedFile] = useState<Blob | MediaSource |null>(file ? file : null);
-    const [preview, setPreview] = useState<string | undefined | Blob>('');
+    const [preview, setPreview] = useState<string | undefined >('');
 
     useEffect(() => {
         

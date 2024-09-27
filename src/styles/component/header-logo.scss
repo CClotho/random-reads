@@ -1,0 +1,40 @@
+
+#logo-header {
+    width: 100%;
+   display: flex;
+   justify-content: center;
+   
+}
+
+.header-design {
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    border-radius: 12px;
+    gap: 1rem;
+    position: relative;
+    padding: 10px;
+   
+    
+
+}
+
+.accessories {
+    width: 15px;
+    height: 15px;
+    border-radius:2px;
+    rotate:(45deg);
+    transform: scale(1);
+    background-color: black;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+   
+}
+#h2 {
+    width: fit-content;
+
+
+    position: relative;
+}

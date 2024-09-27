@@ -80,7 +80,7 @@
   padding: 1rem;
   box-shadow: 6px 6px 2px 4px;
 
-  // if the media screen is literally 500px
+  // if the media screen dimension is literally 500px
   @media  screen and  (max-width: 500px){
     max-width: 300px;
   }

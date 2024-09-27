@@ -1,0 +1,12 @@
+@use '@styles/abstracts/_colors.scss';
+@use  '@styles/component/form.scss';
+@use '@styles/component/avatar.scss';
+@use '@styles/layout/navbar.scss';
+@use '@styles/component/header-logo.scss';
+@use '@styles/pages/home.scss';
+
+
+main {
+    min-height: 100vh;
+    background-color: colors.$dirty-white;
+}

@@ -12,6 +12,11 @@ export const routes = [
            { path: "/", element: <Home/> },
            { path: "/story", element: <Stories/>}
         ],
+       
+    },
+    {   path: 'home/:id',
+        element: <Home/>
+        
     }
 
  ];

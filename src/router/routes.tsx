@@ -2,8 +2,10 @@
 import Login from "@pages/Login";
 import App from "../App";
 import Home from "../pages/Home";
-import Stories from "../pages/Stories";
+import Post from "@components/story-feature/Post";
 import SignUp from "@pages/SignUp";
+import MainPost from "@components/story-feature/MainPost";
+import Stories from "@pages/Stories";
 
 export const routes = [
 
@@ -12,7 +14,7 @@ export const routes = [
        element: <App/>,
         children: [
            { path: "/", element: <Home/> },
-           { path: "/story", element: <Stories/>},
+          
           
         ],
        
@@ -24,7 +26,15 @@ export const routes = [
     {   path: '/sign-up',
         element: <SignUp/>
         
-    }
+    },
+    { path: "/stories",
+      element: <Stories/>,
+      children:[
+        {path:"/stories/:id" ,element: <MainPost/>}
+        
+      ]
+    },
+   /*  {path:"/stories/:id" ,element: <MainPost/>} */
 
  ];
 

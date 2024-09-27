@@ -1,4 +1,5 @@
 import HeaderLogo from "@components/common/HeaderLogo";
+import Post from "@components/story-feature/Post";
 import { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 
@@ -17,6 +18,7 @@ const Home = function() {
           </div>
         </header>
         
+     
  
         
       </>

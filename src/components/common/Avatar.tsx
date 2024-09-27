@@ -1,4 +1,4 @@
-import '@styles/component/avatar.scss';
+
 interface AvatarProps {
     image_link?: string | undefined  // string because this is likely to be link of images hosted in cloud services
     alt: string

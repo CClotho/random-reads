@@ -1,4 +1,4 @@
-import '/src/styles/component/form.scss';
+
 // Type of functions
 interface InputTypes {
     name: string,

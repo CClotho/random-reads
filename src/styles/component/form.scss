@@ -49,10 +49,18 @@
  border-radius: 16px;
  padding: 1rem;
  box-shadow: 6px 6px 2px 4px;
+ position: relative;
 
  // if the media screen is literally 500px
  @media  screen and  (max-width: 500px){
    max-width: 300px;
+ }
+
+ #signup-link {
+   position: absolute;
+   bottom: 50px;
+   font-family: cursive;
+  
  }
 
  //overrides the initial property of .form_controls class
@@ -139,3 +147,13 @@
   width: 300px;
 }
 
+
+//Login and Sign Up Page Component
+
+.form-wrapper {
+  display: flex;
+  justify-content: center;
+  place-items: center;
+  margin: 0 auto;
+  min-height: 100vh;
+}

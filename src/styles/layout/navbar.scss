@@ -3,7 +3,6 @@
 .main-header {
     background-color: colors.$dirty-white;
     border-radius: 12px;
-    padding: 0.5rem;
     box-shadow: 4px 8px 4px;
  
 }
@@ -41,15 +40,4 @@
  
 }
 
-a {
- color: black;
- text-decoration: none;
-
-    &:hover {
-
-       color: colors.$light-coffee;
-        border-bottom: 2px solid colors.$light-coffee;
-        width: fit-content;
-    }
-}
 

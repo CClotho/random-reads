@@ -3,6 +3,7 @@
 import { useState } from "react"
 import Input from "@components/common/Input";
 import Avatar from "@components/common/Avatar";
+import { Link } from "react-router-dom";
 
 interface LoginFormState {
     username: string,
@@ -31,7 +32,7 @@ const LoginForm = function() : React.JSX.Element {
             <Input name="username" placeholder="Rhian Jane" title="Username" value={formData.username} onChange={handleChange}/> 
             <Input name="password" placeholder="******"  title="Password" value={formData.password} onChange={handleChange}/>
             <div className="Btn">  <button className="formBtn" type="button" onClick={()=> alert(JSON.stringify(formData))}> Login</button></div>
-           
+            <span id="signup-link"><Link to="/sign-up">Don't have an account? Sign Up</Link></span>
 
         </form>
 

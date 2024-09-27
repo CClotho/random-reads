@@ -3,10 +3,10 @@ const  Stories = function() {
   
     return (
       
-      <>
-       <div> MY PLACE </div>
+      <main>
+      
         
-      </>
+      </main>
     )
   }
   

@@ -1,12 +1,37 @@
 @use '@styles/abstracts/_colors.scss';
-@use  '@styles/component/form.scss';
-@use '@styles/component/avatar.scss';
+@use '@styles/component/components.scss';
 @use '@styles/layout/navbar.scss';
-@use '@styles/component/header-logo.scss';
 @use '@styles/pages/home.scss';
 
+#root {
+    /*  max-width: 1280px; remove if full width*/
+    margin: 0 auto;
+    text-align: center;
+    
+}
+  
+  
+  
+    
 
 main {
     min-height: 100vh;
     background-color: colors.$dirty-white;
 }
+ul, li {
+    list-style-type: none;
+}
+   
+   
+a {
+color: black;
+text-decoration: none;
+   
+    &:hover {
+   
+        color: colors.$light-coffee;
+        border-bottom: 2px solid colors.$light-coffee;
+        width: fit-content;
+    }
+}
+    

@@ -1,7 +1,9 @@
 
+import Login from "@pages/Login";
 import App from "../App";
 import Home from "../pages/Home";
 import Stories from "../pages/Stories";
+import SignUp from "@pages/SignUp";
 
 export const routes = [
 
@@ -10,12 +12,17 @@ export const routes = [
        element: <App/>,
         children: [
            { path: "/", element: <Home/> },
-           { path: "/story", element: <Stories/>}
+           { path: "/story", element: <Stories/>},
+          
         ],
        
     },
-    {   path: 'home/:id',
-        element: <Home/>
+    {   path: '/login',
+        element: <Login/>
+        
+    },
+    {   path: '/sign-up',
+        element: <SignUp/>
         
     }
 

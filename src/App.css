@@ -1,9 +1,13 @@
 #root {
-  max-width: 1280px;
+  max-width: 1280px; /* remove if full width*/
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
   
+}
+
+ul, li {
+ list-style-type: none;
 }
 
 

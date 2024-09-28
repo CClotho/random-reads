@@ -2,21 +2,35 @@
 @use '@styles/component/components.scss';
 @use '@styles/layout/navbar.scss';
 @use '@styles/pages/home.scss';
+@use '@styles/layout/magazine-layout.scss';
 
 #root {
     /*  max-width: 1280px; remove if full width*/
     margin: 0 auto;
     text-align: center;
+    background-color: colors.$dirty-white;
     
 }
   
   
+html {
+    box-sizing: border-box;
+  }
   
-    
+  *, *::before, *::after {
+    box-sizing: inherit;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  
+  
 
 main {
     min-height: 100vh;
-    background-color: colors.$dirty-white;
+   
 }
 ul, li {
     list-style-type: none;

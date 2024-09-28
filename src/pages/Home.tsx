@@ -1,6 +1,6 @@
 import HeaderLogo from "@components/common/HeaderLogo";
 import Post from "@components/story-feature/Post";
-
+import MagazineLayout from "@components/layout/Magazine";
 import { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 
@@ -11,7 +11,7 @@ const Home = function() {
    
     return (
       
-      <>
+      <main className="home">
        {/* <div onClick={() => setToggle(!toggle)}>Browse Stories</div> */}
         <header className="home-header">
           <div className="logo-container"> 
@@ -20,11 +20,13 @@ const Home = function() {
           </div>
          
         </header>
+
+        <MagazineLayout/>
         
      
  
         
-      </>
+      </main>
     )
   }
   

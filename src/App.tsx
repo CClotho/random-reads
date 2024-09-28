@@ -8,6 +8,7 @@ import { useEffect } from 'react';
 import { useAuth } from 'features/hooks/AuthProvider';
 import {Navigate } from 'react-router-dom';
 import MainNav from '@components/layout/MainNav';
+import MagazineLayout from '@components/layout/Magazine';
 function App() {
 
    const{authentication} = useAuth();

@@ -41,6 +41,7 @@ const SignUpForm = function (): React.JSX.Element {
 
     const handleSubmit = function (e: React.ChangeEvent<HTMLFormElement>): void {
         e.preventDefault();
+        
         console.log(formData);
     }
 

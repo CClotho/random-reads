@@ -28,6 +28,7 @@
 .nav-links {
     display: flex;
     font-weight: bolder;
+   align-items: center;
    
 
 }
@@ -41,3 +42,13 @@
 }
 
 
+.nav-btn {
+    width: 70px;
+    margin-right: 5px;
+    padding: 5px;
+    background-color: colors.$light-beige;
+    border-radius: 8px;
+    font-weight: bolder;
+  
+    cursor: pointer;
+}

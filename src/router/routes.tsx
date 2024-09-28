@@ -6,18 +6,27 @@ import Post from "@components/story-feature/Post";
 import SignUp from "@pages/SignUp";
 import MainPost from "@components/story-feature/MainPost";
 import Stories from "@pages/Stories";
+import ProtectedRoute from "@pages/ProtectedRoute";
 
 export const routes = [
 
     {  
-        /* Layout Element only*/
-       element: <App/>,
-        children: [
-           { path: "/", element: <Home/> },
-          
-          
-        ],
-       
+      /* Layout Element only */
+      element: <App />,
+      children: [
+          { path: "/", element: <Home /> },
+          { element: <ProtectedRoute />,
+            children: [
+                { 
+                  path: "/stories",
+                  element: <Stories />,
+                  children: [
+                    { path: "/stories/:id", element: <MainPost /> }
+                    ]
+                  }
+              ]
+          }
+      ]
     },
     {   path: '/login',
         element: <Login/>
@@ -26,14 +35,7 @@ export const routes = [
     {   path: '/sign-up',
         element: <SignUp/>
         
-    },
-    { path: "/stories",
-      element: <Stories/>,
-      children:[
-        {path:"/stories/:id" ,element: <MainPost/>}
-        
-      ]
-    },
+    }
    /*  {path:"/stories/:id" ,element: <MainPost/>} */
 
  ];

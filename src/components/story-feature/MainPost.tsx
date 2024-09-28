@@ -1,6 +1,7 @@
 
 import '@styles/component/posts.scss';
 const MainPost = function(): React.JSX.Element {
+    
     return (
         <>
         <article className="main-article">

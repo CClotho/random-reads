@@ -1,13 +1,15 @@
 import HeaderLogo from "@components/common/HeaderLogo";
-import { Link } from "react-router-dom"; 
+import { Link, replace } from "react-router-dom"; 
 import { useAuth } from "features/hooks/AuthProvider";
+
 
 const MainNav = function(): React.JSX.Element {
     const {authentication, setAuth} = useAuth();
-   
+
     const handleLogout = function() {
         setAuth(false);
         localStorage.clear();
+        
     }
     return(
        <header className="main-header">

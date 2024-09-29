@@ -1,11 +1,10 @@
 
-import {useUser} from "features/hooks/useUser";
+import { useAuth } from "features/hooks/AuthProvider";
 import { useState } from "react";
 const Profile = function(): React.JSX.Element {
 
-const {user,loading} = useUser();
-    
-    console.log("User from profile");
+const {user,loading} = useAuth();
+
     if(loading) {
         return <div> Loading ....</div>
     }

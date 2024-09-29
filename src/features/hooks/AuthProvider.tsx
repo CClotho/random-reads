@@ -13,18 +13,31 @@ export const useAuth = () => useContext(AuthContext);
 
 
 const AuthProvider = function({children}: {children:React.ReactNode}): React.JSX.Element {
-    const[loading, setLoading]  = useState(false);
-    const [authentication, setAuth] = useState(false);
+
+   const[loading, setLoading]  = useState(false);
+    const [authentication, setAuth] = useState(false); 
+     const [user, setUser] = useState<any>({});
     const access = localStorage.access?  localStorage.getItem('access') : '';
 
          useEffect(()=> {
             console.log("This runs everytime you call Auth provider on a component which is logically to add the refetch of refreshTokens here")
            const fetchData = async function()  {
-          
-                if(access !== undefined || null) {
+             console.log(access)
+                if(access) {
                 
                  setAuth(true)
                  console.log("User Authenticated Status:", authentication)
+                 try {
+                  const response: any = await fetchUser();
+                  setUser(response);
+                  setAuth(true);
+                  console.log(response);
+                  
+                } catch (error) {
+                  console.error('Error fetching user:', error);
+                } finally {
+                  setLoading(false);
+                }
                  // The refresh route in dummyjson is not available only login and user/me
                 /*  fetch('https://dummyjson.com/user/refresh', {
                     method: 'POST',
@@ -43,7 +56,7 @@ const AuthProvider = function({children}: {children:React.ReactNode}): React.JSX
                  }); */
              
            }
-           else if(access === undefined || access === null || access === '') {
+           else if(!access) {
               console.log("User Authenticated Status:", authentication)
               console.log("User is logged out.")
               localStorage.clear();
@@ -52,14 +65,16 @@ const AuthProvider = function({children}: {children:React.ReactNode}): React.JSX
            setLoading(false);
         }
            fetchData();
-      },[authentication])
+      },[access, authentication])
       
 
      const context = {
         loading,
+        user,
         authentication,
         setLoading,
         setAuth,
+        setUser
      }
     
 

@@ -17,7 +17,7 @@ function App() {
     
     <main id="main-app">
  
-       {authentication && user?  <MainNav/> : <NavBar/>}
+       {authentication && user ?  <MainNav/> : <NavBar/>}
       <br/>
 
     

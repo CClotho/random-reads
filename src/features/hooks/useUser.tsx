@@ -47,7 +47,7 @@ const UserProvider = function({children}: {children: React.ReactNode}): React.JS
             
         fetchProfile();
          
-    }, [access, firstName, lastName])  
+    }, [access, authentication, firstName, lastName])  
     const context = {
         user,
         loading,

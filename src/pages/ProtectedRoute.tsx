@@ -1,6 +1,6 @@
 import { useAuth } from 'features/hooks/AuthProvider';
 import { useUser } from 'features/hooks/useUser';
-import { Outlet, Navigate} from 'react-router-dom';
+import { Outlet,Navigate} from 'react-router-dom';
 
 
 const ProtectedRoute = function ():React.ReactNode {

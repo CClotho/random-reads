@@ -17,12 +17,12 @@ const AuthProvider = function({children}: {children:React.ReactNode}): React.JSX
    const[loading, setLoading]  = useState(false);
     const [authentication, setAuth] = useState(false); 
      const [user, setUser] = useState<any>({});
-    const access = localStorage.access?  localStorage.getItem('access') : '';
+    const access = localStorage.access?  localStorage.getItem('access') : false;
 
          useEffect(()=> {
             console.log("This runs everytime you call Auth provider on a component which is logically to add the refetch of refreshTokens here")
            const fetchData = async function()  {
-             console.log(access)
+             console.log(typeof access)
                 if(access) {
                 
                  setAuth(true)
@@ -65,7 +65,7 @@ const AuthProvider = function({children}: {children:React.ReactNode}): React.JSX
            setLoading(false);
         }
            fetchData();
-      },[access, authentication])
+      },[])
       
 
      const context = {

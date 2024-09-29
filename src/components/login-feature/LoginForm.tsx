@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import { Login } from "features/api/authentication";
 import { useAuth } from "features/hooks/AuthProvider";
 import { useNavigate } from "react-router-dom";
+import { useUser } from "features/hooks/useUser";
 
 interface LoginFormState {
     username: string,
@@ -17,6 +18,7 @@ interface LoginFormState {
 const LoginForm = function() : React.JSX.Element {
     const [formData, setFormData] = useState<LoginFormState>({username: '', password: '', expiresInMins: 30})
     const {setAuth} = useAuth();
+    const {setUser} = useUser();
     const [error, setError] = useState<string>('');
     const navigate = useNavigate();
     const handleChange = function(e: React.ChangeEvent<HTMLInputElement>) :void {
@@ -37,8 +39,13 @@ const LoginForm = function() : React.JSX.Element {
              if(response && status === 200) { // no status because it doesn't return any status
                 console.log(response);
                 setAuth(true);
+                setUser(response)
+                console.log("User after logged in:", response);
                 localStorage.setItem('access', response.accessToken);
                 localStorage.setItem('refresh', response.refreshToken);
+                localStorage.setItem('firstName', response.firstName);
+                 localStorage.setItem('lastName', response.lastName);
+                
                 navigate('/stories');
            
             }

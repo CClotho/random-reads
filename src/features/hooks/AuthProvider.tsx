@@ -1,7 +1,7 @@
 import { Login } from "features/api/authentication";
 import { useEffect, useState , createContext, useContext} from "react";
 import { Navigate } from "react-router-dom";
-
+import { fetchUser } from "features/api/user";
 
 // provide the data across the application using React Context Provider
 // then store it in localStorage and get the tokens for every request to the server
@@ -22,9 +22,12 @@ const AuthProvider = function({children}: {children:React.ReactNode}): React.JSX
     useEffect(()=> {
           console.log("This runs everytime you call Auth provider on a component which is logically to add the refetch of refreshTokens here")
          const fetchData = async function()  {
-        setTimeout(()=> {
              
-              if(localStorage.access) {
+              if(access) {
+          
+               //const profile : any = await fetchUser()
+               //setUser(profile)
+               // this gets reset
                setAuth(true)
                console.log("User Authenticated Status:", authentication)
                // The refresh route in dummyjson is not available only login and user/me
@@ -45,7 +48,7 @@ const AuthProvider = function({children}: {children:React.ReactNode}): React.JSX
                }); */
            
          }
-         else if(localStorage.access === undefined || localStorage.access === null) {
+         else if(access === undefined || access === null) {
             console.log("User Authenticated Status:", authentication)
             console.log("User is logged out.")
             localStorage.clear();
@@ -53,22 +56,21 @@ const AuthProvider = function({children}: {children:React.ReactNode}): React.JSX
             <Navigate to="/login" replace={true} />
          }
          setLoading(false);
-        }, 5000)
       }
          fetchData();
-    })
+    },[])
 
      const context = {
         loading,
         authentication,
         setLoading,
-        setAuth
+        setAuth,
      }
     
 
      return (
       <AuthContext.Provider value={context}>
-          {loading ? <p>Loading...</p> : children}
+          {loading ? <p>Loading... from AuthProvider</p> : children}
       </AuthContext.Provider>
      )
 

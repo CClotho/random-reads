@@ -13,13 +13,13 @@ const Home = function() {
       
       <main className="home">
        {/* <div onClick={() => setToggle(!toggle)}>Browse Stories</div> */}
-        <header className="home-header">
+       {/*  <header className="home-header">
           <div className="logo-container"> 
             <HeaderLogo/>
             <h2> Browse Stories</h2>
           </div>
          
-        </header>
+        </header> */}
 
         <MagazineLayout/>
         

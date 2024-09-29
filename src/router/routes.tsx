@@ -7,6 +7,7 @@ import SignUp from "@pages/SignUp";
 import MainPost from "@components/story-feature/MainPost";
 import Stories from "@pages/Stories";
 import ProtectedRoute from "@pages/ProtectedRoute";
+import Profile from "@pages/Profile";
 
 export const routes = [
 
@@ -15,6 +16,7 @@ export const routes = [
       element: <App />,
       children: [
           { path: "/", element: <Home /> },
+         
           { element: <ProtectedRoute />,
             children: [
                 { 
@@ -23,7 +25,8 @@ export const routes = [
                   children: [
                     { path: "/stories/:id", element: <MainPost /> }
                     ]
-                  }
+                },
+                {path: "/profile", element: <Profile/>},
               ]
           }
       ]

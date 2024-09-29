@@ -24,9 +24,6 @@ const AuthProvider = function({children}: {children:React.ReactNode}): React.JSX
          const fetchData = async function()  {
              
               if(access) {
-          
-               //const profile : any = await fetchUser()
-               //setUser(profile)
                // this gets reset
                setAuth(true)
                console.log("User Authenticated Status:", authentication)

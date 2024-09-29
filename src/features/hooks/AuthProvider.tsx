@@ -52,7 +52,7 @@ const AuthProvider = function({children}: {children:React.ReactNode}): React.JSX
            setLoading(false);
         }
            fetchData();
-      },[access])
+      },[authentication])
       
 
      const context = {

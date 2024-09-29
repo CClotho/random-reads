@@ -4,7 +4,8 @@
     background-color: colors.$dirty-white;
     border-radius: 12px;
     box-shadow: 4px 8px 4px;
- 
+    position: sticky;
+   
 }
 
 
@@ -49,6 +50,6 @@
     background-color: colors.$light-beige;
     border-radius: 8px;
     font-weight: bolder;
-  
+    margin-bottom: 4px;
     cursor: pointer;
 }

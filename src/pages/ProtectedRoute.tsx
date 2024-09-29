@@ -7,13 +7,11 @@ const ProtectedRoute = function ():React.ReactNode {
     const {authentication, loading} = useAuth(); // keeps running unless you logged out
     const {user} = useUser();
 
-    console.log("Access Token");
-
    if(loading) {
     return <p>Loading...</p>;
    }
 
-    return authentication && user ? <Outlet/> : <Navigate to="/login"/>
+    return authentication && user ? <Outlet/> : <Navigate to="/login" replace={true}/>
 }
 
 

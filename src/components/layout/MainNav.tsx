@@ -20,6 +20,7 @@ const MainNav = function(): React.JSX.Element {
 
             <ul className="nav-links"> 
                 <li className="links"><Link to="/">Home</Link></li>
+                <li className="links"><Link to="/profile">Profile</Link></li>
                 <button className="nav-btn"type="button" onClick={handleLogout} > Logout</button>
                 
             </ul>

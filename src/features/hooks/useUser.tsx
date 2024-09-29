@@ -1,6 +1,6 @@
 import React, { useEffect,useState , createContext, useContext} from "react";
 import { fetchUser } from "features/api/user";
-    
+import { useAuth } from "./AuthProvider";
 
 const UserContext = createContext<any>(null);
 export const useUser=() => useContext(UserContext);
@@ -12,12 +12,13 @@ const UserProvider = function({children}: {children: React.ReactNode}): React.JS
     const User = {firstName, lastName};
     const [loading, setLoading] = useState<boolean>(false);
     const [user, setUser] = useState<any>(User);
+    const {setAuth, authentication} = useAuth();
     const access = localStorage.access?  localStorage.getItem('access') : '';
-    
+
     useEffect(()=> {
         const fetchProfile =async function(): Promise<any> {
            // will only fetch if there either local storage values is present
-            if (access && firstName === null || undefined || lastName === null || undefined) {
+            if (access && authentication && (!firstName || !lastName)) {
                 setLoading(true);
                 console.log("It rerendered")
                 console.log("Current state of user before fetching", user)
@@ -27,6 +28,8 @@ const UserProvider = function({children}: {children: React.ReactNode}): React.JS
                   localStorage.setItem('firstName', response.firstName);
                   localStorage.setItem('lastName', response.lastName);
                   setUser(response);
+                  setAuth(true);
+                  console.log(response);
                   
                 } catch (error) {
                   console.error('Error fetching user:', error);
@@ -34,12 +37,17 @@ const UserProvider = function({children}: {children: React.ReactNode}): React.JS
                   setLoading(false);
                 }
               }
-            };
+            else if(!authentication) {
+              console.log("User is logged out.")
+              localStorage.clear();
+              setAuth(false);
+              
+              }
+          };
             
         fetchProfile();
          
     }, [access, firstName, lastName])  
-
     const context = {
         user,
         loading,
@@ -49,7 +57,7 @@ const UserProvider = function({children}: {children: React.ReactNode}): React.JS
        
     return (
         <UserContext.Provider value={context}>
-        {loading ? <p>Loading...from UserProvider</p> : children}
+        {loading && access ? <p>Loading...from UserProvider</p> : children}
        </UserContext.Provider>
     )
     

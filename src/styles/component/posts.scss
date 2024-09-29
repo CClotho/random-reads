@@ -30,9 +30,34 @@
      width: 350px;
 }
 
+// Posts
+.Posts {
+    display: flex;
+    flex-direction: column;
+
+
+}
 
 //Main Post
 
 .main-article {
     border: 2px solid burlywood;
+    min-height: 100vh;
+    
+}
+
+.sticky {
+    position: sticky;
+    top:0;
+}
+
+.scroll {
+    width: 100%;
+    overflow-y: scroll;
+    min-height: 100vh;
+}
+
+.story-page {
+    height: 100vh;
+    overflow: hidden;
 }

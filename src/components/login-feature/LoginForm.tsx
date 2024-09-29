@@ -44,7 +44,7 @@ const LoginForm = function() : React.JSX.Element {
                 localStorage.setItem('access', response.accessToken);
                 localStorage.setItem('refresh', response.refreshToken);
                 localStorage.setItem('firstName', response.firstName);
-                 localStorage.setItem('lastName', response.lastName);
+                localStorage.setItem('lastName', response.lastName);
                 
                 navigate('/stories');
            

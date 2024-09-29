@@ -13,7 +13,13 @@ const {user,loading} = useUser();
 
         <>
 
-         <h1>Hello {user.firstName} {user.lastName}</h1> 
+         <div>
+            <h1>Hello {user.firstName} {user.lastName}</h1> 
+            <div>
+                <img src={user.image} alt="profile"/>
+            </div>
+
+         </div>
 
         </>
     )

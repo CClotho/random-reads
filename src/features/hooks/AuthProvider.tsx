@@ -20,9 +20,9 @@ const AuthProvider = function({children}: {children:React.ReactNode}): React.JSX
          useEffect(()=> {
             console.log("This runs everytime you call Auth provider on a component which is logically to add the refetch of refreshTokens here")
            const fetchData = async function()  {
-               
-                if(authentication && access) {
-                 // this gets reset
+          
+                if(access !== undefined || null) {
+                
                  setAuth(true)
                  console.log("User Authenticated Status:", authentication)
                  // The refresh route in dummyjson is not available only login and user/me
@@ -43,7 +43,7 @@ const AuthProvider = function({children}: {children:React.ReactNode}): React.JSX
                  }); */
              
            }
-           else if(access === undefined || access === null) {
+           else if(access === undefined || access === null || access === '') {
               console.log("User Authenticated Status:", authentication)
               console.log("User is logged out.")
               localStorage.clear();
@@ -52,7 +52,7 @@ const AuthProvider = function({children}: {children:React.ReactNode}): React.JSX
            setLoading(false);
         }
            fetchData();
-      },[])
+      },[access])
       
 
      const context = {

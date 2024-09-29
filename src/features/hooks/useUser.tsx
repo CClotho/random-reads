@@ -18,7 +18,7 @@ const UserProvider = function({children}: {children: React.ReactNode}): React.JS
     useEffect(()=> {
         const fetchProfile =async function(): Promise<any> {
            // will only fetch if there either local storage values is present
-            if (access && authentication && (!firstName || !lastName)) {
+            if (access && authentication && (firstName === null || !lastName === null)) {
                 setLoading(true);
                 console.log("It rerendered")
                 console.log("Current state of user before fetching", user)
@@ -37,10 +37,10 @@ const UserProvider = function({children}: {children: React.ReactNode}): React.JS
                   setLoading(false);
                 }
               }
-            else if(!authentication) {
+            else if(access === undefined || access === null) {
               console.log("User is logged out.")
               localStorage.clear();
-              setAuth(false);
+              setAuth(false); 
               
               }
           };

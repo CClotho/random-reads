@@ -10,8 +10,11 @@ const ProtectedRoute = function ():React.ReactNode {
    if(loading) {
     return <p>Loading...</p>;
    }
-
+   
+   if(authentication) {
     return authentication && user ? <Outlet/> : <Navigate to="/login" replace={true}/>
+   }
+  
 }
 
 

@@ -19,7 +19,7 @@ function App() {
  
        {authentication && user?  <MainNav/> : <NavBar/>}
       <br/>
-      <MagazineLayout/>
+
     
       <Outlet/> 
 

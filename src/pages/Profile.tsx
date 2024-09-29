@@ -5,7 +5,7 @@ const Profile = function(): React.JSX.Element {
 
 const {user,loading} = useUser();
     
-
+    console.log("User from profile");
     if(loading) {
         return <div> Loading ....</div>
     }
@@ -23,6 +23,6 @@ const {user,loading} = useUser();
 
         </>
     )
-}
+}       
 
 export default Profile;

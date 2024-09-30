@@ -3,12 +3,8 @@ import { Link } from "react-router-dom";
 import { useAuth } from "features/hooks/AuthProvider";
 
 const NavBar = function(): React.JSX.Element {
-    const {authentication, setAuth} = useAuth();
+    const {setAuth} = useAuth();
    
-    const handleLogout = function() {
-        setAuth(false);
-        localStorage.clear();
-    }
     return(
        <header className="main-header">
         <HeaderLogo/>

@@ -8,13 +8,14 @@ const ProtectedRoute = function ():React.ReactNode {
         
     console.log("Authentication from protected route", authentication)
    
-    if(!authentication) {
-        return <Navigate to="/" replace={true}/>
-    }
-   
+ 
     if(loading) {
     return <p>Loading...</p>;
    }
+
+   if(!authentication) {
+    return <Navigate to="/" replace={true}/>
+    }
 
    
    if(authentication) {

@@ -1,6 +1,6 @@
 
 import '@styles/component/posts.scss';
-import { useAuth } from 'features/hooks/AuthProvider';
+
 const MainPost = function(): React.JSX.Element {
 
     return (

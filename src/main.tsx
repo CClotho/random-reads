@@ -7,11 +7,11 @@ import UserProvider from 'features/hooks/useUser'
 
 
 createRoot(document.getElementById('root')!).render(
-  <StrictMode>
+  
     <AuthProvider>
       <UserProvider>
         <RouterProvider router={router}></RouterProvider>
       </UserProvider>
     </AuthProvider>
-  </StrictMode>,
+ 
 )

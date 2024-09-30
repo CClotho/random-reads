@@ -1,4 +1,3 @@
-import { Login } from "features/api/authentication";
 import { useEffect, useState , createContext, useContext} from "react";
 import { fetchUser } from "features/api/user";
 
@@ -14,27 +13,31 @@ export const useAuth = () => useContext(AuthContext);
 
 const AuthProvider = function({children}: {children:React.ReactNode}): React.JSX.Element {
 
-   const[loading, setLoading]  = useState(false);
-    const [authentication, setAuth] = useState(false); 
-     const [user, setUser] = useState<any>({});
-    const access = localStorage.access?  localStorage.getItem('access') : false;
-
+   const[loading, setLoading]  = useState(true); // To make sure the reset authentication gets set before being redirected to login page or home page
+   const [authentication, setAuth] = useState(false); 
+   const [user, setUser] = useState<any>({});
+   const access = localStorage.access?  localStorage.getItem('access') : false;
          useEffect(()=> {
             console.log("This runs everytime you call Auth provider on a component which is logically to add the refetch of refreshTokens here")
            const fetchData = async function()  {
-             console.log(typeof access)
                 if(access) {
-                
-                 setAuth(true)
-                 console.log("User Authenticated Status:", authentication)
+   
                  try {
-                  const response: any = await fetchUser();
+                  const response: any = await fetchUser(access);
                   setUser(response);
-                  setAuth(true);
-                  console.log(response);
+                   setAuth(true);
+                
+                  //console.log(response);
                   
-                } catch (error) {
-                  console.error('Error fetching user:', error);
+                } catch (error : any) {
+                  if(error.status === 401) {
+                     console.log(error.status)
+                     setAuth(false);
+                     localStorage.clear();
+                     console.log(error)
+
+                  }
+                  console.log('Error fetching user:', error);
                 } finally {
                   setLoading(false);
                 }
@@ -65,7 +68,7 @@ const AuthProvider = function({children}: {children:React.ReactNode}): React.JSX
            setLoading(false);
         }
            fetchData();
-      },[])
+      },[access, authentication])
       
 
      const context = {
@@ -77,7 +80,7 @@ const AuthProvider = function({children}: {children:React.ReactNode}): React.JSX
         setUser
      }
     
-
+     console.log("User Authenticated After Auth Status:", authentication)
      return (
       <AuthContext.Provider value={context}>
           {loading && access ? <p>Loading... from AuthProvider</p> : children}

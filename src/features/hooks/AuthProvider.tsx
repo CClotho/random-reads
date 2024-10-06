@@ -6,16 +6,44 @@ import { fetchUser } from "features/api/user";
 
 // check if accessToken exist then proceed otherwise get refresh Token
 
- const AuthContext = createContext<any>(null);
+export interface User {
+   firstName: string,
+   lastName: string,
+   image?: string,
+}
+export interface AuthContextType {
+   loading: boolean;
+   authentication: boolean;
+   user: User | null;
+   setLoading:  React.Dispatch<React.SetStateAction<boolean>>;
+   setAuth:  React.Dispatch<React.SetStateAction<boolean>>;
+   setUser: React.Dispatch<React.SetStateAction<User | null>>;
+ }
+ 
+export const AuthContext = createContext<AuthContextType | null>(null);
+ 
 
-export const useAuth = () => useContext(AuthContext);
+
+export const useAuth = function() {
+   const authContext = useContext(AuthContext);
+
+   if (authContext === null) {
+      throw new Error("useAuth must be used within an AuthProvider");
+   }
+
+  // const { loading, user, authentication, setLoading, setAuth, setUser } = authContext;
+  // return { loading, user, authentication, setLoading, setAuth, setUser };
+
+   return authContext;
+}
+
 
 
 const AuthProvider = function({children}: {children:React.ReactNode}): React.JSX.Element {
 
-   const[loading, setLoading]  = useState(true); // To make sure the reset authentication gets set before being redirected to login page or home page
-   const [authentication, setAuth] = useState(false); 
-   const [user, setUser] = useState<any>({});
+   const[loading, setLoading]  = useState(false); // To make sure the reset authentication gets set before being redirected to login page or home page
+   const [authentication, setAuth] = useState<boolean>(false); 
+   const [user, setUser] = useState<User | null>(null);
    const access = localStorage.access?  localStorage.getItem('access') : false;
          useEffect(()=> {
             console.log("This runs everytime you call Auth provider on a component which is logically to add the refetch of refreshTokens here")

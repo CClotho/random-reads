@@ -3,11 +3,13 @@
     "baseUrl": "src",
     "types": ["vitest/globals", "vitest"],
     "paths": {
+      "@src/*":["src/*"],
       "@components/*": ["components/*"],
       "@styles/*": ["styles/*"],
       "@pages/*": ["pages/*"],
       "@features/*":["feature/*"],
-      "@shared/*":["shared/*"]
+      "@shared/*":["shared/*"],
+      
     },
     "target": "ES2020",
     "useDefineForClassFields": true,

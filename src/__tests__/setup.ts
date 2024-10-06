@@ -4,6 +4,17 @@ import * as matchers from "@testing-library/jest-dom/matchers";
 
 expect.extend(matchers);
 
-afterEach(() => {
+beforeEach(() => {
+  // Reset any mocks or set up anything necessary before each test
+  vi.clearAllMocks();
   cleanup();
+  
+});
+
+afterEach(() => {
+  
+
+  cleanup();
+
+  
 });

@@ -24,7 +24,7 @@ const UserProvider = function({children}: {children: React.ReactNode}): React.JS
                 console.log("Current state of user before fetching", user)
         
                 try {
-                  const response: any = await fetchUser();
+                  const response: any = await fetchUser(access);
                   localStorage.setItem('firstName', response.firstName);
                   localStorage.setItem('lastName', response.lastName);
                   setUser(response);

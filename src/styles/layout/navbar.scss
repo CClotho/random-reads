@@ -20,11 +20,14 @@
   
 } */
 
-.main-nav {
+.main-nav, .nav-bar {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
 }
+
+
+
 
 .nav-links {
     display: flex;

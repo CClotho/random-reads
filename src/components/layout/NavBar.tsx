@@ -8,7 +8,7 @@ const NavBar = function(): React.JSX.Element {
     return(
        <header className="main-header">
         <HeaderLogo/>
-        <nav className="main-nav">
+        <nav className="nav-bar">
             <ul className="nav-links"> 
                 <li className="links"><Link to="/stories">Stories</Link></li>
                 <li className="links"><Link to="/genre">Genre</Link></li>      

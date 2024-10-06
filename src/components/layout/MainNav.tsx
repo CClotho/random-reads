@@ -4,6 +4,7 @@ import { useAuth } from "features/hooks/AuthProvider";
 
 
 const MainNav = function(): React.JSX.Element {
+   
     const {setAuth} = useAuth();
 
     const handleLogout = function() {
@@ -24,7 +25,7 @@ const MainNav = function(): React.JSX.Element {
             <ul className="nav-links"> 
                 <li className="links"><Link to="/">Home</Link></li>
                 <li className="links"><Link to="/profile">Profile</Link></li>
-                <button className="nav-btn"type="button" onClick={() =>handleLogout()} > Logout</button>
+                <button className="nav-btn" type="button" name="Logout"  onClick={() =>handleLogout()} > Logout</button>
                 
             </ul>
 

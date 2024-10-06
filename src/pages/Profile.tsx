@@ -14,9 +14,9 @@ const {user,loading} = useAuth();
         <>
 
          <div>
-            <h1>Hello {user.firstName} {user.lastName}</h1> 
+            <h1 id="profile">Hello {user && user.firstName ? user.firstName : ''} {user && user.firstName ? user.lastName : ''}</h1> 
             <div>
-                <img src={user.image} alt="profile"/>
+                <img src={user && user.image ? user.image : ''} alt="profile"/>
             </div>
 
          </div>

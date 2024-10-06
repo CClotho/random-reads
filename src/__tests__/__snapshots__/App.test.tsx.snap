@@ -1,0 +1,61 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Main App renders the routes > Public users should not see profile page 1`] = `
+<li
+  class="links"
+>
+  <a
+    href="/stories"
+  >
+    Stories
+  </a>
+</li>
+`;
+
+exports[`Main App renders the routes > Public users should not see profile page 2`] = `
+<li
+  class="links"
+>
+  <a
+    href="/genre"
+  >
+    Genre
+  </a>
+</li>
+`;
+
+exports[`Main App renders the routes > Public users should not see profile page 3`] = `
+<li
+  class="links"
+>
+  <a
+    href="/"
+  >
+    Home
+  </a>
+</li>
+`;
+
+exports[`Main App renders the routes > Public users should not see profile page 4`] = `
+<li
+  class="links"
+>
+  <a
+    href="/sign-up"
+  >
+    Sign Up
+  </a>
+</li>
+`;
+
+exports[`Main App renders the routes > Public users should not see profile page 5`] = `
+<li
+  class="links"
+>
+  <a
+    href="/login"
+  >
+    Login
+  </a>
+</li>
+`;
